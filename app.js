@@ -28,16 +28,11 @@ const signIn = () => {
     .catch(function (error) {
       // Handle Errors here.
       var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
       console.log(error);
       console.log(errorMessage);
     });
 };
 
 const signOut = () => {
-  firebase.auth().signOut();
+  firebase.auth().signOut().then(()=> console.log('Signed out'));
 };
